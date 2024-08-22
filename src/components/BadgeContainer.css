@@ -24,10 +24,11 @@
 }
 
 .image {
-  width: 5rem;
-  height: 5rem;
+  min-width: 5rem;
+  min-height: 5rem;
   border-radius: 50%;
   display: flex;
+  align-self: center;
   align-items: center;
   justify-content: center;
 }
@@ -48,13 +49,20 @@
   perspective: 1000px;
   color: black;
   transition: 200ms ease-in-out;
-  cursor: pointer;
+  user-select: none;
+}
+
+.non-flip-card {
+  perspective: 1000px;
+  color: black;
+  transition: 200ms ease-in-out;
   user-select: none;
 }
 
 .flip-card:hover {
-  transform: translateY(-0.6rem) scale(1.02);
+  /* transform: translateY(-0.6rem) scale(1.02); */
   transition: 200ms ease-in-out;
+  scale: 1.02;
 }
 
 .flip-card-inner {
@@ -80,7 +88,6 @@
   padding-top: 1.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .flip-card-back {
@@ -93,31 +100,25 @@
 
 .option-menu {
   display: flex;
+  flex-direction: column;
 }
 
 .option {
-  width: 2rem;
+  align-self: center;
   height: 2rem;
   margin: 0.1rem;
   transition: 300ms ease;
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.option:hover {
-  transform: scale(1.1);
-  transition: 300ms ease;
+  width: 80%;
+  border-radius: 0.4rem;
 }
 
 .card-back-text {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .badge-severity {
-  position: absolute;
   left: 6.3rem;
-  bottom: 13.4rem;
   width: 3rem;
   height: 3rem;
   padding: 0;
@@ -130,11 +131,24 @@
 }
 
 .badge-name {
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   align-self: center;
+  font-size: 1.2rem;
 }
 
 .test {
-  width: 2.3rem;
-  height: 2.3rem;
+  margin-left: 0.5rem;
+  margin-right: 0.2rem;
+  height: 30px;
+}
+
+.rating-text-container {
+  display: flex;
+  align-self: center;
+  align-items: center;
+}
+
+.rating-text {
+  align-self: center;
+  font-size: 0.9rem;
 }

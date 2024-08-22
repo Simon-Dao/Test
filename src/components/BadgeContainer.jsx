@@ -5,26 +5,27 @@ import Badge from './Badge';
 function BadgeContainer() {
 
   //severity
+  //0 = no rating
   //1 = bad
   //2 = neutral
   //3 = good
-  const createBadge = (path, name, fill) => {
+  const createBadge = (path, name, fill, hasSeverity) => {
     return {
       path,
       name,
       fill,
+      hasSeverity,
       severity: 0,
     }
   }
 
   const [badgeInfo, setBadgeInfo] = useState([
-    createBadge("public\\svgs\\badges\\cleanicon.svg", "clean", "#40a441"),
-    createBadge("public\\svgs\\badges\\comfortableicon.svg", "comfortable", "#fbb545"),
-    createBadge("public\\svgs\\badges\\explainedicon.svg", "explained", "#4e54d7"),
-    createBadge("public\\svgs\\badges\\ontimeicon.svg", "on time", "#e02a5f"),
-    createBadge("public\\svgs\\badges\\accomodatingicon.svg", "accomodating", "#e02a5f"),
-    createBadge("public\\svgs\\badges\\warmgreetingicon.svg", "warm greetings", "#40a441"),
-    createBadge("public\\svgs\\badges\\greatwithgkidsicon.svg", "great with kids", "#7a68a0"),
+    createBadge("public\\svgs\\badges\\cleanicon.svg", "clean", "#40a441", true),
+    createBadge("public\\svgs\\badges\\comfortableicon.svg", "comfortable", "#fbb545", true),
+    createBadge("public\\svgs\\badges\\explainedicon.svg", "explained", "#4e54d7", true),
+    createBadge("public\\svgs\\badges\\ontimeicon.svg", "on time", "#e02a5f", false),
+    createBadge("public\\svgs\\badges\\accomodatingicon.svg", "accomodating", "#e02a5f", false),
+    createBadge("public\\svgs\\badges\\warmgreetingicon.svg", "warm greetings", "#40a441", false),
   ]);
 
   const editSeverity = (name, severity) => {
